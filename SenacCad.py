@@ -15,17 +15,17 @@ c = conn.cursor()
 
 #TABLE
 
-#c.execute("""CREATE TABLE info (
- #       nome text,
-  #      CPF text,
-   #     data text,
-    #    unidade text,
-     #   curso text
-      #  )""")
+c.execute("""CREATE TABLE IF NOT EXISTS info (
+        nome text,
+        CPF text,
+        data text,
+        unidade text,
+        curso text
+        )""")
 
 
 #IMAGEM
-imagem = Image.open("C:/Users/979202/Downloads/Senac_logo.png")
+imagem = Image.open("Senac_logo.png")
 imagem1= imagem.resize((70, 50), Image.LANCZOS)
 imagemt= ImageTk.PhotoImage(imagem1)
 senac = Label(mw,image=imagemt)
